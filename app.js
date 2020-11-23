@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 
+const con = require('./database/conf.js');
+
 const port = process.env.PORT || 8080;
 const app = express();
 
@@ -11,6 +13,19 @@ app.use(
     extended: true,
   })
 );
+
+app.get('/api/players', (req, res) => {
+  con.query('SELECT * FROM player', (err, results) => {
+    if (err) {
+      res.status(500).json({
+        error: err.message,
+        sql: err.sql,
+      });
+    } else {
+      res.json(results);
+    }
+  });
+});
 
 app.listen(port, (err) => {
   if (err) {
