@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api', (req, res) => {
-  res.send('My api');
+  res.send('My apizzz');
 });
 
 app.get('/api/wizards', (req, res) => {
