@@ -18,6 +18,10 @@ app.get('/', (req, res) => {
   res.send('Hello World');
 });
 
+app.get('/api', (req, res) => {
+  res.send('My api');
+});
+
 app.get('/api/players', (req, res) => {
   con.query('SELECT * FROM player', (err, results) => {
     if (err) {
