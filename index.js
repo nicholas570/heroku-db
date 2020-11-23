@@ -14,6 +14,10 @@ app.use(
   })
 );
 
+app.get('/', (req, res) => {
+  res.send('Hello World');
+});
+
 app.get('/api/players', (req, res) => {
   con.query('SELECT * FROM player', (err, results) => {
     if (err) {
