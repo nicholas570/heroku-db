@@ -22,8 +22,8 @@ app.get('/api', (req, res) => {
   res.send('My api');
 });
 
-app.get('/api/players', (req, res) => {
-  con.query('SELECT * FROM player', (err, results) => {
+app.get('/api/wizards', (req, res) => {
+  con.query('SELECT * FROM wizard', (err, results) => {
     if (err) {
       res.status(500).json({
         error: err.message,
